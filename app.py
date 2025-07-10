@@ -2,6 +2,10 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return "OK", 200
+
 @app.route('/health')
 def health():
     return jsonify(status="OK")
