@@ -8,5 +8,6 @@ COPY requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app 
+EXPOSE 5000
 
-CMD ["gunicorn", "-b", "0.0.0.0:5432", "app:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "--timeout", "60", "--keep-alive", "10", "app:app"]
