@@ -35,13 +35,3 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
           cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/myapp:cache
           cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/myapp:cache,mode=max 
-
-  update-kubernetes:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Autosync ArgoCD application
-        run: "ArgoCD will sync the latest image automatically"
