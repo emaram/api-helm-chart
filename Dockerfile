@@ -10,4 +10,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app 
 EXPOSE 5000
 
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "--timeout", "60", "--keep-alive", "10", "app:app"]
+CMD ["sh", "-c", "ls -la /app && python -c 'import app' && gunicorn -b 0.0.0.0:5000 app:app"]
+# CMD ["gunicorn", "-b", "0.0.0.0:5000", "--timeout", "60", "--keep-alive", "10", "app:app"]
