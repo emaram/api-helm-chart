@@ -42,5 +42,5 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
-          cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/myapp:cache
-          cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/myapp:cache,mode=max 
+          platforms: linux/amd64,linux/arm64      # Build for multiple architectures
+
