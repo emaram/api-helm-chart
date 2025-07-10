@@ -1,3 +1,6 @@
 __pycache__/
 *.py[cod]
 helm-env/
+argocd-app.yaml
+helm/
+.github/
