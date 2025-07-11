@@ -41,6 +41,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:1.0.1
+          tags: ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:1.0.2
           platforms: linux/amd64,linux/arm64      # Build for multiple architectures
 
